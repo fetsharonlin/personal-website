@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f2e9">
+  <meta name="description" content="《情境智慧》讀書報告：邏輯拆解與資源重配置。">
+  <title>《情境智慧》：邏輯拆解與資源重配置 — 讀書報告</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Serif+TC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f4f2e9;
+      --ink: #20251e;
+      --muted: #666b60;
+      --line: #d6d5c9;
+      --green: #c8ef67;
+      --blue: #3856e8;
+      --serif: "Noto Serif TC", Georgia, serif;
+      --sans: "DM Sans", "Noto Serif TC", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background-color: var(--paper);
+      background-image: radial-gradient(#20251e12 0.65px, transparent 0.65px);
+      background-size: 6px 6px;
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    .shell {
+      width: min(860px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .topbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .wordmark, .back-link {
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .back-link { color: var(--muted); }
+    .back-link:hover { color: var(--blue); }
+
+    main { padding-block: 68px 90px; }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .eyebrow::before {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--blue);
+      content: "";
+    }
+
+    h1, h2, p { margin-top: 0; }
+
+    h1 {
+      max-width: 760px;
+      margin-bottom: 18px;
+      font-family: var(--serif);
+      font-size: clamp(32px, 6vw, 52px);
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    .deck {
+      max-width: 700px;
+      margin-bottom: 44px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .article-body {
+      display: grid;
+      gap: 28px;
+      color: #393e36;
+      font-size: 15px;
+      line-height: 2;
+    }
+
+    .article-body p { margin: 0; }
+
+    .article-point h2 {
+      margin: 0 0 12px;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: clamp(20px, 3vw, 25px);
+      font-weight: 600;
+      line-height: 1.6;
+    }
+
+    .article-point p + p { margin-top: 14px; }
+
+    .callout {
+      padding: 22px 26px;
+      border-left: 3px solid var(--green);
+      background: #e9e9dc;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.9;
+    }
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+    }
+
+    .article-footer a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .article-footer a:hover { color: var(--blue); }
+
+    @media (max-width: 560px) {
+      .shell { width: calc(100% - 36px); }
+      .topbar { min-height: 66px; }
+      main { padding-block: 46px 64px; }
+      .deck { margin-bottom: 32px; font-size: 14px; }
+      .article-body { gap: 23px; font-size: 14px; }
+      .callout { padding: 17px 18px; font-size: 15px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar shell">
+    <a class="wordmark" href="../../">你的名字 / 個人網站</a>
+    <a class="back-link" href="../../#reading">← 所有讀書報告</a>
+  </header>
+
+  <main class="shell">
+    <article>
+      <header>
+        <p class="eyebrow">讀書報告　·　思考與工作方法</p>
+        <h1>《情境智慧》：邏輯拆解與資源重配置</h1>
+        <p class="deck">作者瓦基是理工背景、曾任台積電工程師。整本書以「推理、驗證、再整合」的方式，條理分明地拆解問題，整理出面對人生困惑的一套攻略。</p>
+      </header>
+
+      <div class="article-body">
+        <p>這本書的核心不是「怎麼更努力」，而是「怎麼不要把力氣用錯地方」。</p>
+
+        <section class="article-point" aria-labelledby="mvp-title">
+          <h2 id="mvp-title">01 / 從 MVP 開始：別用「完整」綁架「開始」</h2>
+          <p>MVP（最小可行性產品）概念是最好的止痛藥。我們常誤以為準備得夠完整才叫謹慎，其實那只是完美主義下的拖延藉口。</p>
+          <p>最近老闆叫我寫一份此次專案的效益。以前我會從頭交代到尾，甚至像作者一樣把細節調個沒完。這次我一直在想老闆到底想看什麼重點，再去補充支持這些重點的資訊，而不是把所有資訊平均鋪開。這麼做有效率多了：不是做得很完整才交，而是先交出「有用的版本」，再慢慢補強。鋪陳是留給講故事用的；生活上的有效溝通，大多需要先講重點再補資訊，節省彼此精力。</p>
+        </section>
+
+        <section class="article-point" aria-labelledby="choices-title">
+          <h2 id="choices-title">02 / 人生也是資產配置：從「雙向門」到「三個帳戶」</h2>
+          <p>生活中大部分決定其實都是「雙向門」，隨時可以回頭修正，不需要每次都搞得像孤注一擲，導致決策疲勞。</p>
+          <p>想想自己也常在日常小事上花很多時間計較細節，感覺自己沒有在「混日子」；也曾做過 FOMO 的不理性投資決定。事後看，其實很多選擇都不是不能改，只是我把它們想得太重要，真正重要的事情又容易隨情緒波動。</p>
+        </section>
+
+        <section class="article-point" aria-labelledby="fear-title">
+          <h2 id="fear-title">03 / 識別「恐懼驅動」，停止無效的內耗</h2>
+          <p>這個提醒有點殘酷，也最誠實：有些努力只是「逃避交付的焦慮」。</p>
+          <p>我們常因為怕被批評、怕別人不可控的眼光，而花費無數時間去符合別人的期待；做的往往不是滿足自己，而是帶著不安的猜測，去滿足連「別人」都不知道是誰的期待。真正的價值驅動，應該聚焦在主觀思考「這件事能產生什麼具體貢獻」，並在過程中更有自信、願意擔當。當壓力被剝離了恐懼，它就不再是絆腳石，而是推動前進的燃料。</p>
+          <p>今年起公司大量導入 AI，鼓勵大家利用。現在比的不只是努力，而是誰能快速做出成果，再持續優化。公司 CTO 開玩笑說，今年會開始出現那種大家小時候最討厭的「不用看書卻考很好」的同學：看起來很輕鬆，卻能運用 AI 做出讓主管驚豔的成果。我想，這些人就是好好運用 80/20 法則，把重複性的工作交給工具，把時間留給真正需要創意與思考的地方。</p>
+        </section>
+
+        <aside class="callout">
+          我最受用的是「未來安全、當下體驗、個人成長」三個帳戶的概念。以後不管努力或放鬆，心裡都能有個底：我現在存的是哪個帳戶？這三個人生帳戶目前的狀態，是否讓我心安？
+        </aside>
+
+        <section class="article-point" aria-labelledby="closing-title">
+          <h2 id="closing-title">結語 / 做一個清醒的行動者</h2>
+          <p>常常檢視這三個帳戶的狀態：該努力時盡力，該體驗時享受，該充實時去尋找成就感。以此取得心靈上的平衡與滿足，確實是很好的策略；既減少焦慮，也讓我明白自己身在何處。</p>
+        </section>
+      </div>
+    </article>
+
+    <footer class="article-footer">
+      <a href="../../#reading">← 回到讀書報告專區</a>
+    </footer>
+  </main>
+</body>
+</html>

@@ -255,73 +255,83 @@
 
     .reading-section { padding-bottom: 96px; }
 
-    .reading-article { max-width: 820px; }
+    .report-entry {
+      display: grid;
+      grid-template-columns: minmax(190px, 0.34fr) 1fr;
+      gap: clamp(24px, 5vw, 64px);
+      align-items: stretch;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      text-decoration: none;
+    }
 
-    .reading-meta {
+    .report-cover {
       display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 14px;
+      min-height: 230px;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+      background: var(--green);
+      color: var(--ink);
+    }
+
+    .report-cover-label, .report-cover-note {
+      margin: 0;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+    }
+
+    .report-cover-title {
+      margin: 18px 0;
+      font-family: var(--serif);
+      font-size: clamp(29px, 3.4vw, 40px);
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .report-copy {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding-block: 12px;
+    }
+
+    .report-meta {
+      margin: 0 0 12px;
       color: var(--muted);
       font-size: 11px;
       font-weight: 600;
-      letter-spacing: 0.5px;
     }
 
-    .reading-meta::before {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--blue);
-      content: "";
-    }
-
-    .reading-title {
-      max-width: 720px;
-      margin: 0 0 16px;
+    .report-title {
+      margin: 0 0 12px;
       font-family: var(--serif);
-      font-size: clamp(25px, 3.4vw, 38px);
+      font-size: clamp(22px, 2.8vw, 32px);
       font-weight: 600;
       line-height: 1.55;
     }
 
-    .reading-deck {
-      max-width: 700px;
-      margin-bottom: 36px;
+    .report-summary {
+      max-width: 600px;
+      margin: 0 0 20px;
       color: var(--muted);
-      font-size: 15px;
-      line-height: 1.9;
-    }
-
-    .reading-content {
-      display: grid;
-      gap: 26px;
-      color: #393e36;
       font-size: 14px;
-      line-height: 2;
-    }
-
-    .reading-content p { margin: 0; }
-
-    .reading-point h4 {
-      margin: 0 0 10px;
-      font-family: var(--serif);
-      font-size: 19px;
-      font-weight: 600;
-      line-height: 1.6;
-    }
-
-    .reading-point p + p { margin-top: 12px; }
-
-    .reading-callout {
-      padding: 20px 24px;
-      border-left: 3px solid var(--green);
-      background: #e9e9dc;
-      color: var(--ink);
-      font-family: var(--serif);
-      font-size: 16px;
       line-height: 1.9;
     }
+
+    .report-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--ink);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .report-entry:hover .report-link { color: var(--blue); }
 
     .contact {
       display: grid;
@@ -407,10 +417,13 @@
       .hero h1 { font-size: 42px; }
       .hero h1 .highlight::after { height: 14px; }
       .section-heading { align-items: start; flex-direction: column; gap: 10px; }
-      .reading-deck { margin-bottom: 28px; }
-      .reading-content { gap: 22px; }
-      .reading-callout { padding: 17px 18px; }
       footer { flex-direction: column; gap: 8px; }
+    }
+
+    @media (max-width: 560px) {
+      .report-entry { grid-template-columns: 1fr; gap: 20px; }
+      .report-cover { min-height: 190px; }
+      .report-copy { padding: 0; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -464,47 +477,22 @@
       <div class="section-heading">
         <div>
           <p class="section-kicker">READING NOTES</p>
-          <h2 id="reading-section-title">讀書筆記</h2>
+          <h2 id="reading-section-title">讀書報告</h2>
         </div>
       </div>
-      <article class="reading-article" aria-labelledby="reading-title">
-        <header>
-          <p class="reading-meta">讀書報告</p>
-          <h3 id="reading-title" class="reading-title">《情境智慧》：邏輯拆解與資源重配置</h3>
-          <p class="reading-deck">作者瓦基是理工背景、曾任台積電工程師。整本書以「推理、驗證、再整合」的方式，條理分明地拆解問題，整理出面對人生困惑的一套攻略。</p>
-        </header>
-        <div class="reading-content">
-          <p>這本書的核心不是「怎麼更努力」，而是「怎麼不要把力氣用錯地方」。</p>
-
-          <section class="reading-point" aria-labelledby="mvp-title">
-            <h4 id="mvp-title">01 / 從 MVP 開始：別用「完整」綁架「開始」</h4>
-            <p>MVP（最小可行性產品）概念是最好的止痛藥。我們常誤以為準備得夠完整才叫謹慎，其實那只是完美主義下的拖延藉口。</p>
-            <p>最近老闆叫我寫一份此次專案的效益。以前我會從頭交代到尾，甚至像作者一樣把細節調個沒完。這次我一直在想老闆到底想看什麼重點，再去補充支持這些重點的資訊，而不是把所有資訊平均鋪開。這麼做有效率多了：不是做得很完整才交，而是先交出「有用的版本」，再慢慢補強。鋪陳是留給講故事用的；生活上的有效溝通，大多需要先講重點再補資訊，節省彼此精力。</p>
-          </section>
-
-          <section class="reading-point" aria-labelledby="choices-title">
-            <h4 id="choices-title">02 / 人生也是資產配置：從「雙向門」到「三個帳戶」</h4>
-            <p>生活中大部分決定其實都是「雙向門」，隨時可以回頭修正，不需要每次都搞得像孤注一擲，導致決策疲勞。</p>
-            <p>想想自己也常在日常小事上花很多時間計較細節，感覺自己沒有在「混日子」；也曾做過 FOMO 的不理性投資決定。事後看，其實很多選擇都不是不能改，只是我把它們想得太重要，真正重要的事情又容易隨情緒波動。</p>
-          </section>
-
-          <section class="reading-point" aria-labelledby="fear-title">
-            <h4 id="fear-title">03 / 識別「恐懼驅動」，停止無效的內耗</h4>
-            <p>這個提醒有點殘酷，也最誠實：有些努力只是「逃避交付的焦慮」。</p>
-            <p>我們常因為怕被批評、怕別人不可控的眼光，而花費無數時間去符合別人的期待；做的往往不是滿足自己，而是帶著不安的猜測，去滿足連「別人」都不知道是誰的期待。真正的價值驅動，應該聚焦在主觀思考「這件事能產生什麼具體貢獻」，並在過程中更有自信、願意擔當。當壓力被剝離了恐懼，它就不再是絆腳石，而是推動前進的燃料。</p>
-            <p>今年起公司大量導入 AI，鼓勵大家利用。現在比的不只是努力，而是誰能快速做出成果，再持續優化。公司 CTO 開玩笑說，今年會開始出現那種大家小時候最討厭的「不用看書卻考很好」的同學：看起來很輕鬆，卻能運用 AI 做出讓主管驚豔的成果。我想，這些人就是好好運用 80/20 法則，把重複性的工作交給工具，把時間留給真正需要創意與思考的地方。</p>
-          </section>
-
-          <aside class="reading-callout">
-            我最受用的是「未來安全、當下體驗、個人成長」三個帳戶的概念。以後不管努力或放鬆，心裡都能有個底：我現在存的是哪個帳戶？這三個人生帳戶目前的狀態，是否讓我心安？
-          </aside>
-
-          <section class="reading-point" aria-labelledby="closing-title">
-            <h4 id="closing-title">結語 / 做一個清醒的行動者</h4>
-            <p>常常檢視這三個帳戶的狀態：該努力時盡力，該體驗時享受，該充實時去尋找成就感。以此取得心靈上的平衡與滿足，確實是很好的策略；既減少焦慮，也讓我明白自己身在何處。</p>
-          </section>
+      <a class="report-entry" href="./reading/contextual-intelligence/" aria-label="閱讀《情境智慧》讀書報告全文">
+        <div class="report-cover" aria-hidden="true">
+          <p class="report-cover-label">讀書報告 / 01</p>
+          <p class="report-cover-title">情境<br>智慧</p>
+          <p class="report-cover-note">推理・驗證・再整合</p>
         </div>
-      </article>
+        <div class="report-copy">
+          <p class="report-meta">閱讀筆記　·　思考與工作方法</p>
+          <h3 class="report-title">《情境智慧》：邏輯拆解與資源重配置</h3>
+          <p class="report-summary">不是一味更努力，而是看清楚力氣該放在哪裡。從 MVP、雙向門到恐懼驅動，記下這本書帶給我的三個提醒。</p>
+          <span class="report-link">閱讀報告全文 <span aria-hidden="true">↗</span></span>
+        </div>
+      </a>
     </section>
 
     <section id="contact" class="contact" aria-labelledby="contact-title">
