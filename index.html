@@ -65,7 +65,7 @@
       display: flex;
       align-items: center;
       gap: 34px;
-      font-size: 13px;
+      font-size: 14px;
     }
 
     .nav a { text-decoration: none; }
@@ -216,7 +216,7 @@
     .section-kicker {
       margin-bottom: 8px;
       color: var(--muted);
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 600;
       letter-spacing: 1.2px;
       text-transform: uppercase;
@@ -233,153 +233,100 @@
     .about-grid {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
-      gap: 80px;
+      gap: 48px;
       align-items: start;
     }
+
+    .about-section { padding-block: 46px 52px; }
+
+    .about-section .section-heading { margin-bottom: 20px; }
 
     .about-lead {
       max-width: 620px;
       margin: 0;
       font-family: var(--serif);
-      font-size: clamp(20px, 2.5vw, 30px);
-      line-height: 1.8;
+      font-size: clamp(19px, 2.1vw, 24px);
+      line-height: 1.65;
     }
 
     .about-detail {
       max-width: 450px;
       margin: 0;
       color: var(--muted);
-      font-size: 14px;
-      line-height: 2;
+      font-size: 15px;
+      line-height: 1.8;
     }
 
-    .reading-section { padding-bottom: 96px; }
+    .topics-section { padding-bottom: 82px; }
 
-    .report-entry {
+    .topic-grid {
       display: grid;
-      grid-template-columns: minmax(190px, 0.34fr) 1fr;
-      gap: clamp(24px, 5vw, 64px);
-      align-items: stretch;
-      padding-top: 24px;
-      border-top: 1px solid var(--line);
-      text-decoration: none;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
     }
 
-    .report-cover {
+    .topic-card {
       display: flex;
-      min-height: 230px;
       flex-direction: column;
       justify-content: space-between;
-      padding: 20px;
+      aspect-ratio: 1;
+      min-width: 0;
+      padding: clamp(16px, 2.2vw, 28px);
+      text-decoration: none;
+      transition: transform 180ms ease;
+    }
+
+    .topic-card:hover { transform: translateY(-3px); }
+
+    .topic-card-reading {
       background: var(--green);
       color: var(--ink);
     }
 
-    .report-cover-label, .report-cover-note {
+    .topic-card-city {
+      background: var(--blue);
+      color: white;
+    }
+
+    .topic-card-creative {
+      border: 1px solid var(--line);
+      background: #e8e7dc;
+      color: var(--ink);
+    }
+
+    .topic-card-kicker {
       margin: 0;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.8px;
-    }
-
-    .report-cover-title {
-      margin: 18px 0;
-      font-family: var(--serif);
-      font-size: clamp(29px, 3.4vw, 40px);
-      font-weight: 600;
-      line-height: 1.35;
-    }
-
-    .report-copy {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      padding-block: 12px;
-    }
-
-    .report-meta {
-      margin: 0 0 12px;
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 600;
-    }
-
-    .report-title {
-      margin: 0 0 12px;
-      font-family: var(--serif);
-      font-size: clamp(22px, 2.8vw, 32px);
-      font-weight: 600;
-      line-height: 1.55;
-    }
-
-    .report-summary {
-      max-width: 600px;
-      margin: 0 0 20px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.9;
-    }
-
-    .report-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding-bottom: 5px;
-      border-bottom: 1px solid var(--ink);
       font-size: 12px;
       font-weight: 600;
+      letter-spacing: 0;
     }
 
-    .report-entry:hover .report-link { color: var(--blue); }
-
-    .topic-feature {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(180px, 0.32fr);
-      align-items: center;
-      gap: clamp(28px, 7vw, 100px);
-      padding-block: 8px;
-    }
-
-    .topic-title {
-      margin: 0 0 14px;
+    .topic-card h3 {
+      margin: 0 0 8px;
       font-family: var(--serif);
-      font-size: clamp(25px, 3.4vw, 40px);
+      font-size: clamp(21px, 2.5vw, 30px);
       font-weight: 600;
-      line-height: 1.5;
+      line-height: 1.4;
     }
 
-    .topic-description {
-      max-width: 620px;
+    .topic-card-detail {
       margin: 0;
-      color: var(--muted);
       font-size: 14px;
-      line-height: 1.9;
+      line-height: 1.6;
     }
 
-    .topic-mark {
-      display: grid;
-      min-height: 118px;
-      align-content: center;
-      gap: 10px;
-      padding-left: 22px;
-      border-left: 3px solid var(--green);
-    }
-
-    .topic-mark span {
-      color: var(--muted);
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
-
-    .topic-mark strong {
-      font-family: var(--serif);
-      font-size: 21px;
+    .topic-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 12px;
+      font-size: 13px;
       font-weight: 600;
     }
 
-    .creative-mark { border-color: var(--blue); }
+    .topic-card-reading .topic-card-detail { font-weight: 500; }
+    .topic-card-city .topic-card-kicker { color: #e2e6ff; }
 
     .contact {
       display: grid;
@@ -436,7 +383,8 @@
       html { scroll-padding-top: 68px; }
       .shell { width: min(100% - 40px, 560px); }
       .topbar { min-height: 66px; }
-      .nav { gap: 18px; font-size: 12px; }
+      .topbar { flex-wrap: wrap; gap: 12px; padding-block: 12px; }
+      .nav { flex: 1 1 210px; gap: 16px; font-size: 14px; }
       .nav .nav-contact { padding: 8px 11px; }
       .hero {
         min-height: auto;
@@ -459,22 +407,22 @@
 
     @media (max-width: 430px) {
       .shell { width: calc(100% - 32px); }
-      .nav { gap: 12px; font-size: 11px; }
+      .nav { gap: 12px; font-size: 13px; }
       .nav .nav-contact { padding: 7px 9px; }
       .wordmark { font-size: 13px; }
       .hero h1 { font-size: 42px; }
       .hero h1 .highlight::after { height: 14px; }
       .section-heading { align-items: start; flex-direction: column; gap: 10px; }
-      .topic-feature { grid-template-columns: 1fr; gap: 24px; }
-      .topic-mark { min-height: auto; padding-block: 4px; }
       footer { flex-direction: column; gap: 8px; }
     }
 
     @media (max-width: 560px) {
-      .report-entry { grid-template-columns: 1fr; gap: 20px; }
-      .report-cover { min-height: 190px; }
-      .report-copy { padding: 0; }
-      .nav { flex-wrap: wrap; justify-content: flex-end; row-gap: 8px; }
+      .topic-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      .topic-card { padding: 14px; }
+      .topic-card h3 { font-size: 19px; }
+      .topic-card-detail { font-size: 14px; }
+      .topic-card-footer { font-size: 13px; }
+      .topic-card:last-child { grid-column: 1 / -1; width: calc((100% - 12px) / 2); justify-self: center; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -513,7 +461,7 @@
       </figure>
     </section>
 
-    <section id="about" class="section" aria-labelledby="about-title">
+    <section id="about" class="section about-section" aria-labelledby="about-title">
       <div class="section-heading">
         <div>
           <p class="section-kicker">A LITTLE ABOUT ME</p>
@@ -526,64 +474,38 @@
       </div>
     </section>
 
-    <section id="reading" class="section reading-section" aria-labelledby="reading-section-title">
+    <section id="topics" class="section topics-section" aria-labelledby="topics-title">
       <div class="section-heading">
         <div>
-          <p class="section-kicker">READING NOTES</p>
-          <h2 id="reading-section-title">讀書報告</h2>
+          <p class="section-kicker">READING · CITY · IDEAS</p>
+          <h2 id="topics-title">慢慢逛</h2>
         </div>
       </div>
-      <a class="report-entry" href="./reading/contextual-intelligence/" aria-label="閱讀《情境智慧》讀書報告全文">
-        <div class="report-cover" aria-hidden="true">
-          <p class="report-cover-label">讀書報告 / 01</p>
-          <p class="report-cover-title">情境<br>智慧</p>
-          <p class="report-cover-note">推理・驗證・再整合</p>
-        </div>
-        <div class="report-copy">
-          <p class="report-meta">最新報告　·　思考與工作方法</p>
-          <h3 class="report-title">《情境智慧》：邏輯拆解與資源重配置</h3>
-          <p class="report-summary">不是一味更努力，而是看清楚力氣該放在哪裡。從 MVP、雙向門到恐懼驅動，記下這本書帶給我的三個提醒。</p>
-          <span class="report-link">閱讀報告全文 <span aria-hidden="true">↗</span></span>
-        </div>
-      </a>
-    </section>
-
-    <section id="taichung" class="section topic-section" aria-labelledby="taichung-title">
-      <div class="section-heading">
-        <div>
-          <p class="section-kicker">LIVING IN TAICHUNG</p>
-          <h2 id="taichung-title">當台中人</h2>
-        </div>
-      </div>
-      <div class="topic-feature">
-        <div>
-          <h3 class="topic-title">在台中，把日子過成自己的路線。</h3>
-          <p class="topic-description">從巷口早餐、散步路線到生活裡的小發現，慢慢收集我在台中的日常。</p>
-        </div>
-        <aside class="topic-mark">
-          <span>TAICHUNG / FIELD NOTES</span>
-          <strong>城市日常採集</strong>
-        </aside>
-      </div>
-    </section>
-
-    <section id="creation" class="section topic-section" aria-labelledby="creation-title">
-      <div class="section-heading">
-        <div>
-          <p class="section-kicker">IDEAS IN THE MAKING</p>
-          <h2 id="creation-title">創意產出</h2>
-        </div>
-      </div>
-      <div class="topic-feature">
-        <div>
-          <h3 class="topic-title">把腦中的靈感，慢慢做出來。</h3>
-          <p class="topic-description">收藏正在嘗試的點子、草稿與創作過程，完成與未完成都算數。</p>
-        </div>
-        <aside class="topic-mark creative-mark">
-          <span>IDEA / TRY / MAKE</span>
-          <strong>從想法開始</strong>
-        </aside>
-      </div>
+      <div class="topic-grid">
+        <a id="reading" class="topic-card topic-card-reading" href="./reading/contextual-intelligence/" aria-label="閱讀《情境智慧》讀書報告全文">
+          <p class="topic-card-kicker">最新讀書報告</p>
+          <div>
+            <h3>《情境智慧》</h3>
+            <p class="topic-card-detail">邏輯拆解與資源重配置</p>
+          </div>
+          <span class="topic-card-footer">閱讀全文 <span aria-hidden="true">↗</span></span>
+        </a>
+        <article id="taichung" class="topic-card topic-card-city">
+          <p class="topic-card-kicker">台中 / 生活</p>
+          <div>
+            <h3>當台中人</h3>
+            <p class="topic-card-detail">台中街巷與日常</p>
+          </div>
+          <span class="topic-card-footer">城市生活採集</span>
+        </article>
+        <article id="creation" class="topic-card topic-card-creative">
+          <p class="topic-card-kicker">靈感 / 創作</p>
+          <div>
+            <h3>創意產出</h3>
+            <p class="topic-card-detail">把靈感慢慢做成作品</p>
+          </div>
+          <span class="topic-card-footer">從想法開始</span>
+        </article>
     </section>
 
     <section id="contact" class="contact" aria-labelledby="contact-title">
