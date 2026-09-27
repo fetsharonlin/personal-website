@@ -128,9 +128,19 @@ h1 {
 }
 
 .article-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
   margin-top: 48px;
   padding-top: 22px;
   border-top: 1px solid var(--line);
+}
+
+.visitor-count img {
+  display: block;
+  width: auto;
+  height: 20px;
 }
 
 .article-footer a {
@@ -205,6 +215,7 @@ h1 {
   .deck { margin-bottom: 32px; font-size: 15px; }
   .article-body { gap: 23px; font-size: 14px; }
   .callout { padding: 17px 18px; font-size: 15px; }
+  .article-footer { flex-wrap: wrap; }
   .report-list { margin-top: 26px; }
   .report-row { grid-template-columns: 32px minmax(0, 1fr) 20px; gap: 12px; padding-block: 20px; }
   .report-number { font-size: 18px; }

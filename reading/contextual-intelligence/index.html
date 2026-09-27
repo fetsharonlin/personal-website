@@ -139,9 +139,19 @@
     }
 
     .article-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
       margin-top: 48px;
       padding-top: 22px;
       border-top: 1px solid var(--line);
+    }
+
+    .visitor-count img {
+      display: block;
+      width: auto;
+      height: 20px;
     }
 
     .article-footer a {
@@ -162,6 +172,7 @@
       .deck { margin-bottom: 32px; font-size: 14px; }
       .article-body { gap: 23px; font-size: 14px; }
       .callout { padding: 17px 18px; font-size: 15px; }
+      .article-footer { flex-wrap: wrap; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -218,6 +229,9 @@
 
     <footer class="article-footer">
       <a href="../">← 回到讀書報告列表</a>
+      <span class="visitor-count">
+        <img src="https://visitor-badge.laobi.icu/badge?page_id=sharon-slowly-lives-personal-website&amp;left_text=%E7%80%8F%E8%A6%BD%E4%BA%BA%E6%AC%A1&amp;left_color=%2320251e&amp;right_color=%23c8ef67" alt="網站累計瀏覽人次" referrerpolicy="no-referrer">
+      </span>
     </footer>
   </main>
 </body>
