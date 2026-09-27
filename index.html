@@ -239,6 +239,9 @@
     }
 
     .topic-card {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -251,25 +254,54 @@
 
     .topic-card:hover { transform: translateY(-3px); }
 
+    .topic-card-image {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 400ms ease;
+    }
+
+    .topic-card::before {
+      position: absolute;
+      z-index: 0;
+      inset: 0;
+      background: var(--topic-overlay);
+      content: "";
+    }
+
+    .topic-card > *:not(.topic-card-image) {
+      position: relative;
+      z-index: 1;
+    }
+
+    .topic-card:hover .topic-card-image { transform: scale(1.045); }
+
     .topic-card-reading {
       background: var(--green);
       color: var(--ink);
+      --topic-overlay: #c8ef67c9;
     }
 
     .topic-card-city {
       background: var(--blue);
       color: white;
+      --topic-overlay: #26336bbd;
     }
 
     .topic-card-creative {
       border: 1px solid var(--line);
       background: #e8e7dc;
       color: var(--ink);
+      --topic-overlay: #e8e7dcd1;
     }
 
     .topic-card-wisdom {
       background: #e98970;
       color: var(--ink);
+      --topic-overlay: #e98970d1;
     }
 
     .topic-card-kicker {
@@ -450,6 +482,7 @@
       </div>
       <div class="topic-grid">
         <a id="reading" class="topic-card topic-card-reading" href="./reading/" aria-label="瀏覽讀書報告列表，最新報告為《情境智慧》">
+          <img class="topic-card-image" src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=800&q=85" alt="" loading="lazy">
           <p class="topic-card-kicker">最新讀書報告</p>
           <div>
             <h3>《情境智慧》</h3>
@@ -458,6 +491,7 @@
           <span class="topic-card-footer">所有讀書報告 <span aria-hidden="true">↗</span></span>
         </a>
         <article id="taichung" class="topic-card topic-card-city">
+          <img class="topic-card-image" src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=800&q=85" alt="" loading="lazy">
           <p class="topic-card-kicker">台中 / 生活</p>
           <div>
             <h3>當台中人</h3>
@@ -466,6 +500,7 @@
           <span class="topic-card-footer">城市生活採集</span>
         </article>
         <article id="creation" class="topic-card topic-card-creative">
+          <img class="topic-card-image" src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=85" alt="" loading="lazy">
           <p class="topic-card-kicker">靈感 / 創作</p>
           <div>
             <h3>創意產出</h3>
@@ -474,6 +509,7 @@
           <span class="topic-card-footer">從想法開始</span>
         </article>
         <article id="wisdom" class="topic-card topic-card-wisdom">
+          <img class="topic-card-image" src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=800&q=85" alt="" loading="lazy">
           <p class="topic-card-kicker">想法 / 安身立命</p>
           <div>
             <h3>生活智慧</h3>
